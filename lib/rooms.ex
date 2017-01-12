@@ -1,5 +1,8 @@
 defmodule HedwigMopidyEvents.Rooms do
-  
+  @moduledoc """
+    An agent to keep track of what room(s) to send messages to
+  """
+
   def start_link do
     Agent.start_link(&MapSet.new/0, name: __MODULE__)
   end

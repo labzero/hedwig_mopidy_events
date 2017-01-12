@@ -1,5 +1,9 @@
 defmodule HedwigMopidyEvents.Task do
-  require Logger
+  @moduledoc """
+    A task that processes events from Mopidy, formats them as messages
+    and then sends them to rooms that have asked for them.
+    Currently only sends track_playback_started events, but could be easily extended
+  """
 
   alias Mopidy.{Events, TlTrack, Track, Album, Artist}
   
